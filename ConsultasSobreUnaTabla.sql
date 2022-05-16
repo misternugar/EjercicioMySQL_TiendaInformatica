@@ -68,8 +68,26 @@ SELECT
 FROM
     producto;
 
--- 10. Lista los nombres y los precios de todos los productos de la tabla producto, truncando el valor del precio para mostrarlo sin ninguna cifra decimal.
+-- 10. Lista los nombres y los precios de todos los productos de la tabla producto, 
+-- truncando el valor del precio para mostrarlo sin ninguna cifra decimal.
+
+SELECT 
+    nombre, ROUND(precio)
+FROM
+    producto;
+
 -- 11. Lista el código de los fabricantes que tienen productos en la tabla producto.
+
+SELECT 
+    código
+FROM
+    fabricante
+WHERE
+    EXISTS( SELECT 
+            codigo
+        FROM
+            producto);
+
 -- 12. Lista el código de los fabricantes que tienen productos en la tabla producto, eliminando los códigos que aparecen repetidos.
 -- 13. Lista los nombres de los fabricantes ordenados de forma ascendente.
 -- 14. Lista los nombres de los fabricantes ordenados de forma descendente.
