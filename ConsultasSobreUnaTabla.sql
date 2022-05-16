@@ -1,24 +1,73 @@
 -- 1. Lista el nombre de todos los productos que hay en la tabla producto.
 
-select nombre from producto;
+SELECT 
+    nombre
+FROM
+    producto;
 
 -- 2. Lista los nombres y los precios de todos los productos de la tabla producto.
 
-select nombre, precio from producto;
+SELECT 
+    nombre, precio
+FROM
+    producto;
 
 -- 3. Lista todas las columnas de la tabla producto.
 
-select * from producto;
+SELECT 
+    *
+FROM
+    producto;
 
 -- 4. Lista el nombre de los productos, el precio en euros y el precio en dólares estadounidenses (USD).
 
-select nombre, precio as euros, precio*1.04 as dolares from producto;
+SELECT 
+    nombre, precio AS 'euros', precio * 1.04 AS 'dólares'
+FROM
+    producto;
 
--- 5. Lista el nombre de los productos, el precio en euros y el precio en dólares estadounidenses (USD). Utiliza los siguientes alias para las columnas: nombre de producto, euros, dólares.
--- 6. Lista los nombres y los precios de todos los productos de la tabla producto, convirtiendo los nombres a mayúscula.
--- 7. Lista los nombres y los precios de todos los productos de la tabla producto, convirtiendo los nombres a minúscula.
--- 8. Lista el nombre de todos los fabricantes en una columna, y en otra columna obtenga en mayúsculas los dos primeros caracteres del nombre del fabricante.
--- 9. Lista los nombres y los precios de todos los productos de la tabla producto, redondeando el valor del precio.
+-- 5. Lista el nombre de los productos, el precio en euros y el precio en dólares estadounidenses (USD). 
+-- Utiliza los siguientes alias para las columnas: nombre de producto, euros, dólares.
+
+SELECT 
+    nombre AS 'nombre de producto',
+    precio AS 'euros',
+    precio * 1.04 AS 'dólares'
+FROM
+    producto;
+
+-- 6. Lista los nombres y los precios de todos los productos de la tabla producto, 
+-- convirtiendo los nombres a mayúscula.
+
+SELECT 
+    UPPER(nombre) AS 'nombre', precio
+FROM
+    producto;
+
+-- 7. Lista los nombres y los precios de todos los productos de la tabla producto, 
+-- convirtiendo los nombres a minúscula.
+
+SELECT 
+    LOWER(nombre) AS 'nombre', precio
+FROM
+    producto;
+
+-- 8. Lista el nombre de todos los fabricantes en una columna, 
+-- y en otra columna obtenga en mayúsculas los dos primeros caracteres del nombre del fabricante.
+
+SELECT 
+    nombre, UPPER(SUBSTRING(nombre, 1, 2)) AS 'abreviatura'
+FROM
+    fabricante;
+
+-- 9. Lista los nombres y los precios de todos los productos de la tabla producto, 
+-- redondeando el valor del precio.
+
+SELECT 
+    nombre, ROUND(precio)
+FROM
+    producto;
+
 -- 10. Lista los nombres y los precios de todos los productos de la tabla producto, truncando el valor del precio para mostrarlo sin ninguna cifra decimal.
 -- 11. Lista el código de los fabricantes que tienen productos en la tabla producto.
 -- 12. Lista el código de los fabricantes que tienen productos en la tabla producto, eliminando los códigos que aparecen repetidos.
