@@ -3,8 +3,17 @@
 select nombre from producto;
 
 -- 2. Lista los nombres y los precios de todos los productos de la tabla producto.
+
+select nombre, precio from producto;
+
 -- 3. Lista todas las columnas de la tabla producto.
+
+select * from producto;
+
 -- 4. Lista el nombre de los productos, el precio en euros y el precio en dólares estadounidenses (USD).
+
+select nombre, precio as euros, precio*1.04 as dolares from producto;
+
 -- 5. Lista el nombre de los productos, el precio en euros y el precio en dólares estadounidenses (USD). Utiliza los siguientes alias para las columnas: nombre de producto, euros, dólares.
 -- 6. Lista los nombres y los precios de todos los productos de la tabla producto, convirtiendo los nombres a mayúscula.
 -- 7. Lista los nombres y los precios de todos los productos de la tabla producto, convirtiendo los nombres a minúscula.
